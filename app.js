@@ -4,9 +4,11 @@ const app = express()
 const productRouter = require('./app/product/routes')
 const productRouterv2 = require('./app/productV2/routes')
 const logger = require ('morgan')
+const cors = require('cors')
 
 const port = process.env.PORT || 3000;
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extends: true}));

@@ -2,8 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "app.js",
+      "src": "app.js", 
       "use": "@vercel/node"
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/public/(.*)",
+      "dest": "/uploads/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"  
+    }
+  ],
+  "env": {
+    "PORT": "3000"
+  }
 }
