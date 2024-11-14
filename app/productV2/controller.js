@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Product = require ('./model');
-const { log } = require('console');
+
 
 const addProduct = async (req, res) => {
     const {user_id, name, price, stock, status} = req.body;
